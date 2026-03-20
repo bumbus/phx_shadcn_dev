@@ -2,8 +2,9 @@
 @source "../css";
 @source "../js";
 @source "../../lib/phx_shadcn_dev_web";
-/* Scan phx_shadcn components for Tailwind classes (path dep, not in deps/) */
-@source "../../../phx_shadcn/lib";
+/* Scan phx_shadcn components for Tailwind classes */
+@source "../../../phx_shadcn/lib";  /* path dep (local dev) */
+@source "../../deps/phx_shadcn/lib";  /* git/hex dep (production) */
 
 @plugin "../vendor/heroicons";
 

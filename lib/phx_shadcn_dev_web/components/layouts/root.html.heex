@@ -4,7 +4,21 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="csrf-token" content={get_csrf_token()} />
-    <.live_title default="PhxShadcn Dev" suffix=" · Component Library">
+    <meta name="description" content="Phoenix LiveView component library mirroring shadcn/ui — 39 components, 22 JS hooks, 3-mode state ownership. Visually faithful, LiveView-native." />
+
+    <%!-- Open Graph --%>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="PhxShadcn — shadcn/ui for Phoenix LiveView" />
+    <meta property="og:description" content="39 LiveView-native components, 22 JS hooks, 3-mode state ownership. Not a React wrapper — built from scratch for LiveView." />
+    <meta property="og:url" content="https://phx-shadcn-dev.fly.dev" />
+    <meta property="og:site_name" content="PhxShadcn" />
+
+    <%!-- Twitter/Bluesky --%>
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="PhxShadcn — shadcn/ui for Phoenix LiveView" />
+    <meta name="twitter:description" content="39 LiveView-native components, 22 JS hooks, 3-mode state ownership. Built from scratch for LiveView." />
+
+    <.live_title default="PhxShadcn" suffix=" · shadcn/ui for Phoenix LiveView">
       {assigns[:page_title]}
     </.live_title>
     <link phx-track-static rel="stylesheet" href={~p"/assets/css/app.css"} />
