@@ -41,16 +41,6 @@ For deployment (e.g. Fly.io), set `PHX_SHADCN_FROM_GIT=1` to switch to the git d
 PHX_SHADCN_FROM_GIT=1 mix deps.get
 ```
 
-### Reference source
-
-The `shadcn_source/` directory (gitignored) can optionally contain a clone of the [shadcn/ui repo](https://github.com/shadcn-ui/ui) for reference when building components:
-
-```bash
-git clone https://github.com/shadcn-ui/ui.git shadcn_source
-```
-
-This is not required to run the app.
-
 ## Deployment
 
 To deploy to Fly.io:
