@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="csrf-token" content={get_csrf_token()} />
+    <.live_title default="PhxShadcn Dev" suffix=" · Component Library">
+      {assigns[:page_title]}
+    </.live_title>
+    <link phx-track-static rel="stylesheet" href={~p"/assets/css/app.css"} />
+    <script defer phx-track-static type="text/javascript" src={~p"/assets/js/app.js"}>
+    </script>
+    <script>
+      // Apply theme config before first paint to prevent flash
+      (() => {
+        let mode, radius;
+        try {
+          const cfg = JSON.parse(localStorage.getItem("phx-shadcn-theme-config"));
+          if (cfg) { mode = cfg.mode; radius = cfg.radius; }
+        } catch (_) {}
+        // Fall back to legacy key
+        if (!mode) {
+          const legacy = localStorage.getItem("phx-shadcn-theme");
+          if (legacy) mode = legacy;
+        }
+        if (mode === "dark" || (!mode && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.classList.add("dark");
+        }
+        if (typeof radius === "number") {
+          document.documentElement.style.setProperty("--radius", radius + "rem");
+        }
+      })();
+    </script>
+  </head>
+  <body class="min-h-screen bg-background text-foreground antialiased">
+    {@inner_content}
+  </body>
+</html>

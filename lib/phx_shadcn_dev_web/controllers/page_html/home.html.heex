@@ -1,0 +1,151 @@
+<%!-- Hero --%>
+<section class="flex flex-col items-center justify-center px-4 pt-24 pb-16 sm:pt-32 sm:pb-20 text-center">
+  <Layouts.logo class="scale-[2] mb-10" />
+  <h1 class="text-4xl sm:text-5xl font-bold tracking-tight max-w-2xl">
+    Phoenix LiveView components mirroring
+    <span class="text-primary">shadcn/ui</span>
+  </h1>
+  <p class="mt-6 text-lg text-muted-foreground max-w-xl leading-relaxed">
+    39 components, 22 JS hooks, 3-mode state ownership.
+    Visually faithful, LiveView-native.
+  </p>
+  <div class="mt-10 flex flex-wrap gap-4 justify-center">
+    <.button size="lg" class="h-11 px-8">
+      <a href="/showcase">Browse Components</a>
+    </.button>
+    <.button variant="outline" size="lg" class="h-11 px-8">
+      <a href="/storybook">Open Storybook</a>
+    </.button>
+  </div>
+</section>
+
+<.separator />
+
+<%!-- Quick Start --%>
+<section class="px-4 py-16 sm:py-20">
+  <div class="mx-auto max-w-2xl">
+    <h2 class="text-2xl font-semibold tracking-tight">Quick Start</h2>
+    <p class="mt-3 text-muted-foreground">
+      Add the dependency and run the installer. That's it.
+    </p>
+
+    <div class="mt-8 space-y-4">
+      <.card>
+        <.card_header>
+          <.card_title>1. Add dependency</.card_title>
+        </.card_header>
+        <.card_content>
+          <pre class="rounded-lg bg-muted p-4 text-sm overflow-x-auto"><code>{"{:phx_shadcn, \"~> 0.1.0\"}\n{:igniter, \"~> 0.5\"}  # optional, enables auto-setup"}</code></pre>
+        </.card_content>
+      </.card>
+
+      <.card>
+        <.card_header>
+          <.card_title>2. Install</.card_title>
+        </.card_header>
+        <.card_content>
+          <pre class="rounded-lg bg-muted p-4 text-sm overflow-x-auto"><code>mix igniter.install phx_shadcn</code></pre>
+          <p class="mt-3 text-sm text-muted-foreground">
+            Patches your web module, CSS theme, and JS hooks automatically.
+          </p>
+        </.card_content>
+      </.card>
+
+      <.card>
+        <.card_header>
+          <.card_title>3. Use components</.card_title>
+        </.card_header>
+        <.card_content>
+          <pre class="rounded-lg bg-muted p-4 text-sm overflow-x-auto"><code>{"<.button variant=\"outline\">Click me</.button>\n<.dialog id=\"my-dialog\">\n  <.dialog_trigger>Open</.dialog_trigger>\n  <.dialog_content>Hello!</.dialog_content>\n</.dialog>"}</code></pre>
+        </.card_content>
+      </.card>
+    </div>
+  </div>
+</section>
+
+<.separator />
+
+<%!-- Buttons showcase --%>
+<section class="px-4 py-16 sm:py-20">
+  <div class="mx-auto max-w-2xl">
+    <h2 class="text-2xl font-semibold tracking-tight">Buttons</h2>
+    <p class="mt-3 text-muted-foreground">
+      Every variant, every size. All with built-in <code class="text-sm bg-muted px-1.5 py-0.5 rounded">phx-click-loading</code> states.
+    </p>
+
+    <div class="mt-8 space-y-8">
+      <%!-- Variants --%>
+      <div class="space-y-3">
+        <h3 class="text-sm font-medium text-muted-foreground">Variants</h3>
+        <div class="flex flex-wrap gap-3">
+          <.button>Default</.button>
+          <.button variant="secondary">Secondary</.button>
+          <.button variant="destructive">Destructive</.button>
+          <.button variant="outline">Outline</.button>
+          <.button variant="ghost">Ghost</.button>
+          <.button variant="link">Link</.button>
+        </div>
+      </div>
+
+      <%!-- Sizes --%>
+      <div class="space-y-3">
+        <h3 class="text-sm font-medium text-muted-foreground">Sizes</h3>
+        <div class="flex flex-wrap items-center gap-3">
+          <.button size="sm">Small</.button>
+          <.button size="default">Default</.button>
+          <.button size="lg">Large</.button>
+          <.button size="icon" aria-label="Settings">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4">
+              <path fill-rule="evenodd" d="M7.84 1.804A1 1 0 0 1 8.82 1h2.36a1 1 0 0 1 .98.804l.331 1.652a6.993 6.993 0 0 1 1.929 1.115l1.598-.54a1 1 0 0 1 1.186.447l1.18 2.044a1 1 0 0 1-.205 1.251l-1.267 1.113a7.047 7.047 0 0 1 0 2.228l1.267 1.113a1 1 0 0 1 .206 1.25l-1.18 2.045a1 1 0 0 1-1.187.447l-1.598-.54a6.993 6.993 0 0 1-1.929 1.115l-.33 1.652a1 1 0 0 1-.98.804H8.82a1 1 0 0 1-.98-.804l-.331-1.652a6.993 6.993 0 0 1-1.929-1.115l-1.598.54a1 1 0 0 1-1.186-.447l-1.18-2.044a1 1 0 0 1 .205-1.251l1.267-1.114a7.05 7.05 0 0 1 0-2.227L1.821 7.773a1 1 0 0 1-.206-1.25l1.18-2.045a1 1 0 0 1 1.187-.447l1.598.54A6.993 6.993 0 0 1 7.51 3.456l.33-1.652ZM10 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd" />
+            </svg>
+          </.button>
+        </div>
+      </div>
+
+      <%!-- Combined --%>
+      <div class="space-y-3">
+        <h3 class="text-sm font-medium text-muted-foreground">Combined</h3>
+        <div class="flex flex-wrap items-center gap-3">
+          <.button variant="outline" size="sm">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4 mr-1.5">
+              <path d="M10.75 4.75a.75.75 0 0 0-1.5 0v4.5h-4.5a.75.75 0 0 0 0 1.5h4.5v4.5a.75.75 0 0 0 1.5 0v-4.5h4.5a.75.75 0 0 0 0-1.5h-4.5v-4.5Z" />
+            </svg>
+            Add item
+          </.button>
+          <.button variant="destructive" size="sm">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4 mr-1.5">
+              <path fill-rule="evenodd" d="M8.75 1A2.75 2.75 0 0 0 6 3.75v.443c-.795.077-1.584.176-2.365.298a.75.75 0 1 0 .23 1.482l.149-.022.841 10.518A2.75 2.75 0 0 0 7.596 19h4.807a2.75 2.75 0 0 0 2.742-2.53l.841-10.52.149.023a.75.75 0 0 0 .23-1.482A41.03 41.03 0 0 0 14 4.193V3.75A2.75 2.75 0 0 0 11.25 1h-2.5ZM10 4c.84 0 1.673.025 2.5.075V3.75c0-.69-.56-1.25-1.25-1.25h-2.5c-.69 0-1.25.56-1.25 1.25v.325C8.327 4.025 9.16 4 10 4ZM8.58 7.72a.75.75 0 0 0-1.5.06l.3 7.5a.75.75 0 1 0 1.5-.06l-.3-7.5Zm4.34.06a.75.75 0 1 0-1.5-.06l-.3 7.5a.75.75 0 1 0 1.5.06l.3-7.5Z" clip-rule="evenodd" />
+            </svg>
+            Delete
+          </.button>
+          <.button variant="secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4 mr-1.5">
+              <path d="M3 3.5A1.5 1.5 0 0 1 4.5 2h6.879a1.5 1.5 0 0 1 1.06.44l4.122 4.12A1.5 1.5 0 0 1 17 7.622V16.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 3 16.5v-13Z" />
+            </svg>
+            Save draft
+          </.button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<.separator />
+
+<%!-- CTA --%>
+<section class="px-4 py-16 sm:py-20 text-center">
+  <div class="mx-auto max-w-xl">
+    <h2 class="text-2xl font-semibold tracking-tight">Explore all 39 components</h2>
+    <p class="mt-3 text-muted-foreground">
+      Interactive demos with live code, state mode examples, and event handling.
+    </p>
+    <div class="mt-8 flex flex-wrap gap-4 justify-center">
+      <.button size="lg" class="h-11 px-8">
+        <a href="/showcase">Open Showcase</a>
+      </.button>
+      <.button variant="outline" size="lg" class="h-11 px-8">
+        <a href="/storybook">Open Storybook</a>
+      </.button>
+    </div>
+  </div>
+</section>
